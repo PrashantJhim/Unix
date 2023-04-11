@@ -1,7 +1,128 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 #Main{
+    position: relative;
     display: flex;
     flex-direction: column;
+}
+#AddInv{
+    padding-left: 20px;
+    border: 1px solid black;
+    width: 600px;
+    height: 700px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 600px;
+}
+#AddInv input{
+    margin-bottom: 10px;
+    font-size: large;
+    width: 400px;
+    height: 30px ;
+}
+#EditInv input{
+    margin-bottom: 10px;
+    font-size: large;
+    width: 400px;
+    height: 30px ;
+}
+#AddNew{
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: crimson;
+    font-size: large;
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 100px;
+    left: 20px;
+}
+#AddInv img{
+    width: 300px;
+    height: 300px;
+}
+#AddInv button{
+    width: 100px;
+    height: 40px;
+    font-size: large;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: crimson;
+    color: white;
+}
+#EditInv button:hover{
+    background-color: white;
+    color: crimson;
+}
+#EditInv img{
+    width: 300px;
+    height: 300px;
+}
+#EditInv button{
+    width: 100px;
+    height: 40px;
+    font-size: large;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: crimson;
+    color: white;
+}
+#AddInv button:hover{
+    background-color: white;
+    color: crimson;
+}
+#BuyInv{
+    background-color: white;
+    border: 1px solid black;
+    width: 600px;
+    padding-top: 20px;
+    padding-left: 20px;
+    height: 700px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 600px;
+}
+#BuyInv img{
+    width: 500px;
+    height: 400px;
+}
+#BuyInv h2{
+    margin-bottom: 5px
+}
+#BuyInv input {
+    margin-top: 2px ;
+    font-size: small;
+    width: 150px;
+    height: 40px;
+}
+#BuyInv button{
+    width: 100px;
+    height: 40px;
+    font-size: large;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: crimson;
+    color: white;
+}
+
+#EditInv{
+    background-color: white;
+    padding-left: 20px;
+    border: 1px solid black;
+    width: 600px;
+    height: 700px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 600px;
 }
 #Nav{
     width: 100%;
@@ -37,8 +158,44 @@
     flex-direction: row;
 }
 #Feed{
-    width: 70%;
+    margin-top: 40px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+#Card{
+    overflow: hidden;
+    margin-top: 10px;
+    margin-left: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 500px;
+    height: 700px;
+}
+#Card img{
+    width: 500px;
+    height: 500px;
+   
+}
+#DetailsofCard{
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#BuyButton{
+    background-color: crimson;
+    margin-top: 10px;
+    font-size: medium;
+    width: 100px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: white;
+}
+#BuyButton:hover{
+    background-color: white;
+    color: crimson;
 }

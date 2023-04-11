@@ -17,7 +17,25 @@ const RegSchema= new mongoose.Schema({
     Type:Boolean
 })
 
+const InvSchema = new mongoose.Schema({
+    Name:String,
+    Brand:String,
+    Price:String,
+    Img:String
+})
+
+const CartSchema = new mongoose.Schema({
+    Name:String,
+    User:String,
+    Price:String,
+    Brand:String,
+    Img:String,
+    Quantity:String
+})
+
 const RegDb = new mongoose.model("RegUnix",RegSchema)
+const InvDb = new mongoose.model("InvDb",InvSchema)
+const CartDb = new mongoose.model("Cartvdb",CartSchema)
 
 app.post('/Register',async(req,res)=>{
     const Pass = encrypt.hashSync(req.body.Password,10)
@@ -33,6 +51,37 @@ app.post('/Register',async(req,res)=>{
     }))
     const Result = await Data.save() 
     res.status(200).send({status:true})
+})
+
+app.post("/AddInv",async(req,res)=>{
+    console.log(req.body)
+    const Data = new InvDb({
+        Name:req.body.Name,
+        Brand:req.body.Brand,
+        Price:req.body.Price,
+        Img:req.body.Img
+    })
+
+    const Result = await Data.save()
+    res.status(200).send({status:true})
+})
+
+app.post("/AddCart",async(req,res)=>{
+    const Data = new CartDb({
+        Name : req.body.Name,
+        User: req.body.User,
+        Price:req.body.Price,
+        Brand:req.body.Brand,
+        Img:req.body.Img,
+        Quantity:req.body.Quantity
+    })
+    const Result = await Data.save() 
+    res.status(200).send({status:true})
+})
+
+app.post("/Inv",async(req,res)=>{
+    const Data = await InvDb.find({})
+    res.status(200).send({status:true,Arr:Data})
 })
 
 app.post("/CheckUser",async(req,res)=>{
@@ -56,12 +105,18 @@ app.post("/Token",async(req,res)=>{
         const data = jwt.verify(Cookies.jwt,"myNameIsPrashant")
         const Data = await RegDb.find({Email:data.Email})
         if (Data.length != 0){
-            res.status(200).send({status:true,Email:Data[0].Email,FullName:Data[0].FullName})
+            res.status(200).send({status:true,Email:Data[0].Email,FullName:Data[0].FullName,Type:Data[0].Type})
         }
         if (Data.length == 0){
             res.status(200).send({status:false})
         }
     }
+})
+
+app.post("/Edit",async(req,res)=>{
+    const Data = await InvDb.updateOne({_id:req.body. id},{$set:{Name:req.body.Name,Price:req.body.Price,Brand:req.body.Brand,Img:req.body.Img}})
+    console.log(Data)
+    res.status(200).send({status:true})
 })
 
 app.post("/Login",async(req,res)=>{
