@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+#Main{
+    display: flex;
+    flex-direction: column;
+}
+#Nav{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+#Nav h1{
+    color: crimson;
+    font-family: 'Pacifico', cursive;
+    margin-left: 10px;
+}
+#NavButton{
+    position: absolute;
+    width: 300px;
+    top: 30px;
+    right: 5px;
+}
+#NavButton button{
+    border: 0px;
+    background-color: white;
+    font-size: large;
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    margin-right: 10px;
+}
+#NavButton button:hover{
+    color: crimson;
+}
+#Container{
+    display: flex;
+    flex-direction: row;
+}
+#Feed{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
